@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColDef, ColGroupDef, GridApi, RowValueChangedEvent } from 'ag-grid-community';
+import { ColDef, ColGroupDef, DomLayoutType, GridApi, RowValueChangedEvent } from 'ag-grid-community';
 import { simpleGrid } from 'src/app/static-data/mock-data';
 import { ButtonRendereComponent } from '../button-rendere/button-rendere.component';
 
@@ -16,6 +16,8 @@ export class CrudGridComponent implements OnInit {
   rowData: any = simpleGrid.rowData;
   frameworkComponents: any;
 
+  public domLayout: DomLayoutType = 'autoHeight';
+
   constructor() { 
     this.frameworkComponents = {
       buttonRenderer: ButtonRendereComponent,
@@ -24,15 +26,15 @@ export class CrudGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.columnDefs.push(
-      {
-        headerName: 'Edit',
-        cellRenderer: 'buttonRenderer',
-        cellRendererParams: {
-          onClick: this.onEditButtonClick.bind(this),
-          label: 'Edit'
-        },
-        editable: false
-      },
+      // {
+      //   headerName: 'Edit',
+      //   cellRenderer: 'buttonRenderer',
+      //   cellRendererParams: {
+      //     onClick: this.onEditButtonClick.bind(this),
+      //     label: 'Edit'
+      //   },
+      //   editable: false
+      // },
       {
         headerName: 'Delete',
         cellRenderer: 'buttonRenderer',
@@ -41,16 +43,16 @@ export class CrudGridComponent implements OnInit {
           label: 'Delete'
         },
         editable: false
-      },
-      {
-        headerName: 'Save',
-        cellRenderer: 'buttonRenderer',
-        cellRendererParams: {
-          onClick: this.onSaveButtonClick.bind(this),
-          label: 'Save'
-        },
-        editable: false
       }
+      // {
+      //   headerName: 'Save',
+      //   cellRenderer: 'buttonRenderer',
+      //   cellRendererParams: {
+      //     onClick: this.onSaveButtonClick.bind(this),
+      //     label: 'Save'
+      //   },
+      //   editable: false
+      // }
     )
   }
 

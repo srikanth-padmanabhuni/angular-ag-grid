@@ -1,11 +1,9 @@
 <div style="padding: 1rem;">
     <div class="row">
         <h5 class="col-9">CRUD Operations</h5>
-        <button class="col-3 btn btn-primary btn-sm" (click)="insertNewRow()">Add Row</button>
     </div>
     <hr/>
     <ag-grid-angular
-        style="width: 610px; height: 510px;"
         class="ag-theme-alpine"
         [rowData]="rowData"
         [columnDefs]="columnDefs"
@@ -13,6 +11,10 @@
         [editType]='"fullRow"'
         (rowValueChanged)="onRowValueChanged($event)"
         [frameworkComponents]="frameworkComponents"
+        [domLayout]="domLayout"
     >
     </ag-grid-angular>
+</div>
+<div style="padding: 1rem;">
+    <button class="btn btn-primary btn-sm" (click)="insertNewRow()">+ Add Row</button>
 </div>

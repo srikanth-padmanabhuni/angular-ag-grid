@@ -2,7 +2,8 @@
     <button type="button" class="btn btn-sm btn-info" (click)="onClick($event)">{{label}}</button>
 </span>
 <span *ngIf="label == 'Delete'">
-    <button type="button" class="btn btn-sm btn-danger" (click)="onClick($event)">{{label}}</button>
+    <button type="button" class="btn btn-sm" style="border: 1px solid black;
+    border-radius: 1rem;color: black;" (click)="onClick($event)"><i class="bi bi-x"></i></button>
 </span>
 <span *ngIf="label == 'Save'">
     <button type="button" class="btn btn-sm btn-success" (click)="onClick($event)">{{label}}</button>
