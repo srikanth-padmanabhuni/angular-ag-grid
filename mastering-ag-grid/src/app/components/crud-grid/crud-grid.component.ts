@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColDef, ColGroupDef, DomLayoutType, GridApi, RowValueChangedEvent } from 'ag-grid-community';
+import { ColDef, ColGroupDef, DomLayoutType, GridApi, RowClassRules, RowValueChangedEvent } from 'ag-grid-community';
 import { simpleGrid } from 'src/app/static-data/mock-data';
 import { ButtonRendereComponent } from '../button-rendere/button-rendere.component';
 
@@ -96,5 +96,9 @@ export class CrudGridComponent implements OnInit {
   onDeleteButtonClick(params)
   {
     this.api.applyTransaction({remove: [params.data]});
+  }
+
+  exportToExcel() {
+    this.api.exportDataAsExcel();
   }
 }

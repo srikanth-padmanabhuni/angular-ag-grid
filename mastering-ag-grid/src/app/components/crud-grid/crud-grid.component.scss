@@ -1,4 +1,16 @@
-.ag-theme-alpine {
-    --ag-header-foreground-color: white;
-    --ag-header-background-color: rgb(123 73 184);
-  }
+::ng-deep .ag-theme-alpine {
+  --ag-header-foreground-color: white;
+  --ag-header-background-color: rgb(33 25 156);
+  --ag-cell-horizontal-border: 2px solid #6a73d8c9;
+  --ag-row-border-color: #6a73d8c9;
+  --ag-row-border-width: 2px;
+  --ag-header-column-separator-display: aliceblue;
+}
+
+::ng-deep .ag-row-odd {
+  background-color: #87cefab3 !important;
+}
+
+::ng-deep .ag-header-group-cell-label {
+  justify-content: center !important;
+}
